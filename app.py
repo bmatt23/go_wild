@@ -4,7 +4,7 @@ from collections import defaultdict
 
 @st.cache_data
 def load_routes():
-    df = pd.read_excel("frontier_routes.xlsx", sheet_name = "single_destination_coded")  
+    df = pd.read_excel("frontier_flights_list.xlsx", sheet_name = "single_destination_coded")  
     graph = defaultdict(list)
     for _, row in df.iterrows():
         graph[row["origin"]].append(row["destination"])
